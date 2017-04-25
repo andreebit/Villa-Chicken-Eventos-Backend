@@ -11,6 +11,10 @@ namespace App\Repositories;
 
 use App\Models\EventType;
 
+/**
+ * Class EventTypeRepository
+ * @package App\Repositories
+ */
 class EventTypeRepository extends Repository
 {
 

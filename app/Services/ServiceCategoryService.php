@@ -13,16 +13,30 @@ use App\Repositories\ServiceCategoryRepository;
 use App\Serializers\CustomSerializer;
 use App\Transformers\ServiceCategoryTransformer;
 
+/**
+ * Class ServiceCategoryService
+ * @package App\Services
+ */
 class ServiceCategoryService
 {
 
+    /**
+     * @var ServiceCategoryRepository|null
+     */
     private $serviceCategoryRepository = null;
 
+    /**
+     * ServiceCategoryService constructor.
+     * @param ServiceCategoryRepository $serviceCategoryRepository
+     */
     public function __construct(ServiceCategoryRepository $serviceCategoryRepository)
     {
         $this->serviceCategoryRepository = $serviceCategoryRepository;
     }
 
+    /**
+     * @return array
+     */
     public function getAll() {
         $data = $this->serviceCategoryRepository->getAll();
         return fractal()

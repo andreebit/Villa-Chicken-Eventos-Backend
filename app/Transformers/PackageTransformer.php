@@ -3,22 +3,40 @@
 namespace App\Transformers;
 
 use App\Models\EventType;
+use App\Models\Package;
 use League\Fractal;
 
 class PackageTransformer extends Fractal\TransformerAbstract
 {
-
     /**
-     * @param EventType $eventType
+     * @param Package $package
      * @return array
      */
-    public function transform(EventType $eventType)
+    public function transform(Package $package)
     {
+
+        $items = $package->package_items()->get();
+
+        $arrayItems = [];
+        foreach ($items as $item) {
+            $arrayItems[] = [
+                'description' => $item->description,
+                'service_category' => [
+                    'id' => $item->service_category->id,
+                    'name' => $item->service_category->name
+                ]
+            ];
+        }
+
         $response = [
-            'id' => (int)$eventType->id,
-            'name' => $eventType->name,
-            'created_at' => (string) $eventType->created_at,
-            'updated_at' => (string) $eventType->created_at
+            'id' => (int)$package->id,
+            'name' => $package->name,
+            'price' => (float) $package->price,
+            'minimum_pax' => (integer) $package->minimum_pax,
+            'event_type' => $package->event_type->name,
+            'items' => $arrayItems,
+            'created_at' => (string) $package->created_at,
+            'updated_at' => (string) $package->created_at
         ];
 
         return $response;

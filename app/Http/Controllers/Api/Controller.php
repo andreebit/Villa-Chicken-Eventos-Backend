@@ -22,7 +22,7 @@ abstract class Controller extends BaseController
      */
     protected function responseNoContent()
     {
-        return response()->json('', Response::HTTP_NO_CONTENT);
+        return response()->make("", Response::HTTP_NO_CONTENT);
     }
 
 }

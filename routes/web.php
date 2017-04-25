@@ -26,12 +26,12 @@ $app->group(['prefix' => 'api', 'namespace' => 'Api'], function () use ($app) {
         $app->get('service-categories', 'ServiceCategoryController@index');
 
         //packages
-        $app->get('packages', 'CustomersController@index');
-        $app->get('packages/{id}', 'CustomersController@get');
-        $app->post('packages', 'CustomersController@post');
-        $app->put('packages/{id}', 'CustomersController@put');
-        $app->patch('packages/{id}', 'CustomersController@patch');
-        $app->delete('packages/{id}', 'CustomersController@delete');
+        $app->get('packages', 'PackageController@index');
+        $app->get('packages/{id}', 'PackageController@get');
+        $app->post('packages', 'PackageController@post');
+        $app->put('packages/{id}', 'PackageController@put');
+        $app->patch('packages/{id}', 'PackageController@patch');
+        $app->delete('packages/{id}', 'PackageController@delete');
 
     });
 });

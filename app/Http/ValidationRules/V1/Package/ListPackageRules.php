@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\ValidationRules\Api\V1\Customer;
+namespace App\Http\ValidationRules\V1\Package;
 
 class ListPackageRules
 {
@@ -8,9 +8,7 @@ class ListPackageRules
     public static function rules()
     {
         return [
-            'page' => 'integer',
-            'items' => 'integer',
-            'name' => 'string'
+            'event_type_id' => 'exists:evt_event_types,id'
         ];
     }
 

@@ -11,22 +11,28 @@ namespace App\Repositories;
 
 use App\Models\PackageItem;
 
+/**
+ * Class PackageItemRepository
+ * @package App\Repositories
+ */
 class PackageItemRepository extends Repository
 {
 
+    /**
+     * @return string
+     */
     protected function model()
     {
         return PackageItem::class;
     }
 
-    public function search($query)
-    {
-        return null;
-    }
-
+    /**
+     * @param $packageId
+     * @return mixed
+     */
     public function getByPackageId($packageId)
     {
-        return $this->getByFieldValue('package_id', $packageId$packageId);
+        return $this->getByFieldValue('package_id', $packageId);
     }
 
 }
