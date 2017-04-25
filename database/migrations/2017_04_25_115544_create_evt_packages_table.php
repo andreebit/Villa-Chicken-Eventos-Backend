@@ -3,21 +3,21 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateEvtGuestsTable extends Migration {
+class CreateEvtPackagesTable extends Migration {
 
 	public function up()
 	{
-		Schema::create('evt_guests', function(Blueprint $table) {
+		Schema::create('evt_packages', function(Blueprint $table) {
 			$table->increments('id');
 			$table->timestamps();
+			$table->softDeletes();
 			$table->string('name');
-			$table->string('lastname');
-			$table->integer('event_id')->unsigned();
+			$table->integer('event_type_id')->unsigned();
 		});
 	}
 
 	public function down()
 	{
-		Schema::drop('evt_guests');
+		Schema::drop('evt_packages');
 	}
 }

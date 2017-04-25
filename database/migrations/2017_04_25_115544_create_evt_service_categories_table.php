@@ -3,11 +3,11 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateEvtServiceTypesTable extends Migration {
+class CreateEvtServiceCategoriesTable extends Migration {
 
 	public function up()
 	{
-		Schema::create('evt_service_types', function(Blueprint $table) {
+		Schema::create('evt_service_categories', function(Blueprint $table) {
 			$table->increments('id');
 			$table->timestamps();
 			$table->softDeletes();
@@ -17,6 +17,6 @@ class CreateEvtServiceTypesTable extends Migration {
 
 	public function down()
 	{
-		Schema::drop('evt_service_types');
+		Schema::drop('evt_service_categories');
 	}
 }
