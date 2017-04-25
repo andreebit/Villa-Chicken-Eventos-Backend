@@ -42,13 +42,6 @@ abstract class Repository implements RepositoryInterface
 
 
     /**
-     * @param $query
-     * @return mixed
-     */
-    abstract public function search($query);
-
-
-    /**
      * @return mixed
      */
     public function getModel()
