@@ -9,7 +9,26 @@
 namespace App\Services;
 
 
+use App\Repositories\ServiceCategoryRepository;
+use App\Serializers\CustomSerializer;
+use App\Transformers\ServiceCategoryTransformer;
+
 class ServiceCategoryService
 {
+
+    private $serviceCategoryRepository = null;
+
+    public function __construct(ServiceCategoryRepository $serviceCategoryRepository)
+    {
+        $this->serviceCategoryRepository = $serviceCategoryRepository;
+    }
+
+    public function getAll() {
+        $data = $this->serviceCategoryRepository->getAll();
+        return fractal()
+            ->collection($data, new ServiceCategoryTransformer(), 'data')
+            ->serializeWith(new CustomSerializer())
+            ->toArray();
+    }
 
 }
