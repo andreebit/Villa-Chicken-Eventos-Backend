@@ -22,13 +22,4 @@ class EventTypeRepository extends Repository
         return EventType::class;
     }
 
-    /**
-     * @param $query
-     * @return null
-     */
-    public function search($query)
-    {
-        return null;
-    }
-
 }

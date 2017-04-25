@@ -22,13 +22,4 @@ class ServiceCategoryRepository extends Repository
         return ServiceCategory::class;
     }
 
-    /**
-     * @param $query
-     * @return null
-     */
-    public function search($query)
-    {
-        return null;
-    }
-
 }
