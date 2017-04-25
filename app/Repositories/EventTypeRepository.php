@@ -9,7 +9,26 @@
 namespace App\Repositories;
 
 
+use App\Models\EventType;
+
 class EventTypeRepository extends Repository
 {
+
+    /**
+     * @return mixed
+     */
+    protected function model()
+    {
+        return EventType::class;
+    }
+
+    /**
+     * @param $query
+     * @return null
+     */
+    public function search($query)
+    {
+        return null;
+    }
 
 }
