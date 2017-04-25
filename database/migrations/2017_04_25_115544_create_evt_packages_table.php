@@ -12,6 +12,8 @@ class CreateEvtPackagesTable extends Migration {
 			$table->timestamps();
 			$table->softDeletes();
 			$table->string('name');
+            $table->decimal('price');
+            $table->integer('minimum_pax')->default(0);
 			$table->integer('event_type_id')->unsigned();
 		});
 	}
