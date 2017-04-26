@@ -33,6 +33,7 @@ class PackageTransformer extends Fractal\TransformerAbstract
             'name' => $package->name,
             'price' => (float) $package->price,
             'minimum_pax' => (integer) $package->minimum_pax,
+            'event_type_id' => $package->event_type->id,
             'event_type' => $package->event_type->name,
             'items' => $arrayItems,
             'created_at' => (string) $package->created_at,
