@@ -178,18 +178,16 @@ class PackageService
             $row = $this->packageRepository->getById($id);
             if ($row->event_type_id != $eventTypeId) {
                 $result = $this->packageRepository->getByEventType($eventTypeId);
-            } else {
-                $result = $this->packageRepository->getByEventType($row->event_type_id);
+                if (count($result) >= self::MAX_PACKAGES_BY_EVENT_TYPE) {
+                    throw new NotCreatedException(trans('exception.package_count_limit_registered'));
+                }
             }
         } else {
             $result = $this->packageRepository->getByEventType($eventTypeId);
+            if (count($result) >= self::MAX_PACKAGES_BY_EVENT_TYPE) {
+                throw new NotCreatedException(trans('exception.package_count_limit_registered'));
+            }
         }
-
-        if (count($result) >= self::MAX_PACKAGES_BY_EVENT_TYPE) {
-            throw new NotCreatedException(trans('exception.package_count_limit_registered'));
-        }
-
-        return count($result);
     }
 
 }
