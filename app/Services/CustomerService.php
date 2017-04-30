@@ -24,7 +24,7 @@ class CustomerService
 {
 
     /**
-     * @var EventTypeRepository|null
+     * @var CustomerRepository|null
      */
     private $customerRepository = null;
 

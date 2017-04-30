@@ -34,8 +34,11 @@ $app->group(['prefix' => 'api', 'namespace' => 'Api'], function () use ($app) {
         $app->delete('packages/{id}', 'PackageController@delete');
 
 
-        //event types
+        //customers
         $app->get('customers/document/{type}/{number}', 'CustomerController@getByDocument');
+
+        //lounges
+        $app->get('lounges/local/{id}', 'LoungeController@getByLocal');
 
     });
 });
