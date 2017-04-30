@@ -18,7 +18,7 @@ class LoungeTransformer extends Fractal\TransformerAbstract
             'id' => (int)$lounge->id,
             'name' => $lounge->name,
             'capacity' => (int) $lounge->capacity,
-            'price' => $lounge->price,
+            'price' => (double) $lounge->price,
             'created_at' => (string) $lounge->created_at,
             'updated_at' => (string) $lounge->updated_at
         ];
