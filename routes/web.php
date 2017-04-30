@@ -40,5 +40,8 @@ $app->group(['prefix' => 'api', 'namespace' => 'Api'], function () use ($app) {
         //lounges
         $app->get('lounges/local/{id}', 'LoungeController@getByLocal');
 
+        //materials
+        $app->get('materials/event-type/{id}', 'MaterialController@getByEventType');
+
     });
 });
