@@ -9,6 +9,8 @@ return [
     'package_not_updated' => 'Paquete no pudo ser actualizado.',
     'package_not_deleted' => 'Paquete no pudo ser eliminado.',
     'package_name_already_registered' => 'El nombre del paquete ya está siendo utilizado.',
-    'package_count_limit_registered' => 'El tipo de evento ya no puede tener asociados más paquetes.'
+    'package_count_limit_registered' => 'El tipo de evento ya no puede tener asociados más paquetes.',
+
+    'customer_not_found' => 'No se encontró el cliente.',
 
 ];

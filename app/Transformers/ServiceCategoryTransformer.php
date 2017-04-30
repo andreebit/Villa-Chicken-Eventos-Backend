@@ -18,7 +18,7 @@ class ServiceCategoryTransformer extends Fractal\TransformerAbstract
             'id' => (int)$serviceCategory->id,
             'name' => $serviceCategory->name,
             'created_at' => (string) $serviceCategory->created_at,
-            'updated_at' => (string) $serviceCategory->created_at
+            'updated_at' => (string) $serviceCategory->updated_at
         ];
 
         return $response;

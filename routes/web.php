@@ -33,5 +33,9 @@ $app->group(['prefix' => 'api', 'namespace' => 'Api'], function () use ($app) {
         $app->patch('packages/{id}', 'PackageController@patch');
         $app->delete('packages/{id}', 'PackageController@delete');
 
+
+        //event types
+        $app->get('customers/document/{type}/{number}', 'CustomerController@getByDocument');
+
     });
 });

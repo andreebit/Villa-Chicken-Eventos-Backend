@@ -18,7 +18,7 @@ class EventTypeTransformer extends Fractal\TransformerAbstract
             'id' => (int)$eventType->id,
             'name' => $eventType->name,
             'created_at' => (string) $eventType->created_at,
-            'updated_at' => (string) $eventType->created_at
+            'updated_at' => (string) $eventType->updated_at
         ];
 
         return $response;

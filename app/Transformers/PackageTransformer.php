@@ -37,7 +37,7 @@ class PackageTransformer extends Fractal\TransformerAbstract
             'event_type' => $package->event_type->name,
             'items' => $arrayItems,
             'created_at' => (string) $package->created_at,
-            'updated_at' => (string) $package->created_at
+            'updated_at' => (string) $package->updated_at
         ];
 
         return $response;
