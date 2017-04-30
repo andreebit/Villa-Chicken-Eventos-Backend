@@ -43,5 +43,13 @@ $app->group(['prefix' => 'api', 'namespace' => 'Api'], function () use ($app) {
         //materials
         $app->get('materials/event-type/{id}', 'MaterialController@getByEventType');
 
+        //quotations
+        $app->get('quotations', 'QuotationController@index');
+        $app->get('quotations/{id}', 'QuotationController@get');
+        $app->post('quotations', 'QuotationController@post');
+        $app->put('quotations/{id}', 'QuotationController@put');
+        $app->patch('quotations/{id}', 'QuotationController@patch');
+        $app->delete('quotations/{id}', 'QuotationController@delete');
+
     });
 });

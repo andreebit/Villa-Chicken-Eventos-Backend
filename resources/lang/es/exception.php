@@ -13,4 +13,9 @@ return [
 
     'customer_not_found' => 'No se encontró el cliente.',
 
+    'quotation_not_found' => 'No se encontró la cotización.',
+    'quotation_not_created' => 'Cotización no pudo ser creada.',
+    'quotation_not_updated' => 'Cotización no pudo ser actualizada.',
+    'quotation_not_deleted' => 'Cotización no pudo ser eliminada.',
+
 ];
