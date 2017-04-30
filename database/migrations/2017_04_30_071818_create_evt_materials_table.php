@@ -13,7 +13,7 @@ class CreateEvtMaterialsTable extends Migration {
 			$table->softDeletes();
 			$table->string('name');
 			$table->decimal('price', 10,2);
-			$table->integer('package_id')->unsigned();
+			$table->integer('package_id')->unsigned()->nullable();
 			$table->boolean('is_package')->default(false);
 		});
 	}

@@ -14,6 +14,7 @@ class CreateEvtLoungesTable extends Migration {
 			$table->integer('local_id')->unsigned();
 			$table->integer('capacity')->default('0');
 			$table->decimal('price', 10,2);
+			$table->string('name');
 		});
 	}
 
