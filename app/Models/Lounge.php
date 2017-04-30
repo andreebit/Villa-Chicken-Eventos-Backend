@@ -14,7 +14,7 @@ class Lounge extends Model
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
-    protected $fillable = array('local_id', 'capacity', 'price');
+    protected $fillable = array('local_id', 'capacity', 'price', 'local_id');
 
     public function local()
     {

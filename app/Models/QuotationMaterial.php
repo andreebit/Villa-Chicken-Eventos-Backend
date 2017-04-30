@@ -9,7 +9,7 @@ class QuotationMaterial extends Model
 
     protected $table = 'evt_quotation_materials';
     public $timestamps = true;
-    protected $fillable = array('price', 'quantity');
+    protected $fillable = array('price', 'quantity', 'quotation_id', 'material_id');
 
     public function quotation()
     {
