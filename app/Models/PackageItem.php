@@ -14,7 +14,7 @@ class PackageItem extends Model
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
-    protected $fillable = array('package_id', 'service_category_id', 'description');
+    protected $fillable = array('description');
 
     public function package()
     {

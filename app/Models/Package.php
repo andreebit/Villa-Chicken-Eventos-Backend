@@ -14,7 +14,7 @@ class Package extends Model
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
-    protected $fillable = array('event_type_id', 'name', 'price', 'minimum_pax');
+    protected $fillable = array('name', 'price', 'minimum_pax');
 
     public function package_items()
     {
@@ -24,6 +24,11 @@ class Package extends Model
     public function event_type()
     {
         return $this->belongsTo('App\Models\EventType');
+    }
+
+    public function material()
+    {
+        return $this->hasOne('App\Models\Material');
     }
 
 }

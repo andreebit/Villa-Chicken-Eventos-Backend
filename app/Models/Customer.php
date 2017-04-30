@@ -5,21 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class EventType extends Model 
+class Customer extends Model 
 {
 
-    protected $table = 'evt_event_types';
+    protected $table = 'evt_customers';
     public $timestamps = true;
 
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
-    protected $fillable = array('name');
-
-    public function packages()
-    {
-        return $this->hasMany('App\Models\Package');
-    }
+    protected $fillable = array('name', 'lastname', 'phone_number', 'email', 'document_number', 'document_type', 'name_contact', 'phone_number_contact', 'email_contact');
 
     public function quotations()
     {

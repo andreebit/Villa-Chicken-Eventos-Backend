@@ -5,20 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class EventType extends Model 
+class Lounge extends Model 
 {
 
-    protected $table = 'evt_event_types';
+    protected $table = 'evt_lounges';
     public $timestamps = true;
 
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
-    protected $fillable = array('name');
+    protected $fillable = array('local_id', 'capacity', 'price');
 
-    public function packages()
+    public function local()
     {
-        return $this->hasMany('App\Models\Package');
+        return $this->belongsTo('App\Models\Local');
     }
 
     public function quotations()
